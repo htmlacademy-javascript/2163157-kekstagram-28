@@ -44,30 +44,6 @@ const pickIntegerInRange = (min, max) => {
   return Math.round(value);
 };
 
-/**
- * создаст объект фотографии
- * @param {number} id
- * @return {ImageState}
- */
-const createImageState = (id) => {
-  const url = `photos/${id}.jpg`;
-  const description = pickItemFromList(descriptions);
-  const likes = pickIntegerInRange(15, 200);
-  const comment = createCommentStateList(pickIntegerInRange(0, 25));
-  return {id, url, description, likes, comment};
-};
-
-
-/**
- * создаст список объектов фотографий
- * @param {number} length
- * @return {createImageState[]}
- */
-const createImageStateList = (length = 25) => {
-  const list = new Array(length).fill(1);
-
-  return list.map((start, index) => createImageState(start + index));
-};
 
 /**
  * создаст объект комментария
@@ -93,5 +69,29 @@ const createCommentStateList = (length) => {
   return list.map((start, index) => createCommentState(start + index));
 };
 
+/**
+ * создаст объект фотографии
+ * @param {number} id
+ * @return {ImageState}
+ */
+const createImageState = (id) => {
+  const url = `photos/${id}.jpg`;
+  const description = pickItemFromList(descriptions);
+  const likes = pickIntegerInRange(15, 200);
+  const comment = createCommentStateList(pickIntegerInRange(0, 25));
+  return {id, url, description, likes, comment};
+};
+
+
+/**
+ * создаст список объектов фотографий
+ * @param {number} length
+ * @return {createImageState[]}
+ */
+const createImageStateList = (length = 25) => {
+  const list = new Array(length).fill(1);
+
+  return list.map((start, index) => createImageState(start + index));
+};
 
 createImageStateList();
