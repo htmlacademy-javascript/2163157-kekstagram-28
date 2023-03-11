@@ -1,5 +1,5 @@
 /**
- * @typedef_ImageState
+ * @typedef ImageState
  * @prop {number} id
  * @prop {string} url
  * @prop {string} description
@@ -8,9 +8,10 @@
  */
 
 /**
- * @typedef_CommentState
+ * @typedef CommentState
  * @prop {number} id
  * @prop {string} avatar
  * @prop {string} message
  * @prop {string} name
  */
+
