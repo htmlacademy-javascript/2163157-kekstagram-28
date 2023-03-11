@@ -1,3 +1,3 @@
-import createImageStateList from './data';
+import createImageStateList from './data.js';
 
 createImageStateList();
